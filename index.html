@@ -2,12 +2,24 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+
+    <link rel="stylesheet" href="css/style.css">
     <title>Tour De France</title>
 </head>
 <body>
+<nav aria-label="Main navigation">
+    <a href="#ridertable" class="view-link">Ryttere</a>
+    <a href="#addriders" class="view-link">Tilføj Rytter</a>
+    <a href="#mytab" class="view-link">Tom tap</a>
+</nav>
 <div id="nav"></div>
-<div id="ridertable"></div>
+
 <main id="app">
+    <div id="ridertable" class="view-content"></div>
+
+    <div id="addriders" class="view-content"></div>
+
+    <div id="mytab" class="view-content"></div>
 
 </main>
 <script src="js/app.js" type="module"></script>

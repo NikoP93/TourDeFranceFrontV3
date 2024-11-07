@@ -1,6 +1,7 @@
-import {initializeRiderTable} from "./ridertable.js";
+import { initializeViewNavigation } from "./router.js";
 
-const content = document.getElementById("app")
+document.addEventListener("DOMContentLoaded", initApp);
 
-initializeRiderTable()
-
+function initApp() {
+    initializeViewNavigation();
+}

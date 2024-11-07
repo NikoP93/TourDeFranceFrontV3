@@ -3,7 +3,6 @@ import {fetchAnyUrl, restDelete} from "./module.js";
 console.log("Jeg er i ridertable")
 
 const urlRiders = "http://localhost:8080/riders"
-const getTeamsUrl = "http://localhost:8080/teams"
 const tblRiders = document.createElement("table")
 
 
