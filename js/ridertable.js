@@ -31,7 +31,30 @@ function createTable(rider) {
     cell = row.insertCell(cellcount++)
     cell.innerHTML = rider.team.teamName
 
+    const pbDelete = document.createElement("input")
+    pbDelete.type = "button"
+    pbDelete.setAttribute("value", "Slet rytter")
+    pbDelete.className = "btn1"
+    pbDelete.onclick = function () {
+        document.getElementById(rider.id).remove()
+        deleteRider(rider)
 
+    }
+    row.appendChild(pbDelete)
+
+
+}
+
+async function deleteRider(rider){
+    try{
+        const url = urlRiders + "/" + rider.id
+        const resp = await restDelete(url)
+        const body = await resp.text()
+        alert(body)
+    } catch(error){
+        alert(error.message)
+        console.log(error)
+    }
 }
 
 async function fetchRiders() {
