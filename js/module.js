@@ -28,4 +28,17 @@ async function restDelete(url){
     return response;
 }
 
-export{fetchAnyUrl,ObjectAsJson,restDelete};
+async function fillTeamsDropdown(ddTeam,getTeamsUrl) {
+    ddTeam.innerHTML = '';
+
+    const teams = await fetchAnyUrl(getTeamsUrl)
+    console.log("Fetched teams",teams)
+    teams.forEach(team => {
+        const option = document.createElement("option");
+        option.value = team.teamid;
+        option.textContent = team.teamName;
+        ddTeam.appendChild(option);
+    })
+}
+
+export{fetchAnyUrl,ObjectAsJson,restDelete,fillTeamsDropdown};

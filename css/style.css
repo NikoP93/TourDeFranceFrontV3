@@ -62,5 +62,9 @@ nav a.active {
   display: block;
 }
 
+.hidden {
+  display: none;
+}
+
 /* ---------- Other styling ---------- */
 /* Other styling goes here or in a new css file */

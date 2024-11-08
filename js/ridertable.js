@@ -36,6 +36,7 @@ function createTable(rider) {
 
 async function fetchRiders() {
     const riderTableDiv = document.getElementById("ridertable")
+    tblRiders.innerHTML = ""
     riderTableDiv.appendChild(tblRiders)
     const riders = await fetchAnyUrl(urlRiders)
     console.log(riders);

@@ -7,17 +7,25 @@
     <title>Tour De France</title>
 </head>
 <body>
+
+<!-- Navigation bar -->
+<!-- ved at sætte href="#ridertable, ændre vi i url'en når der bliver trykket på nav baren" -->
 <nav aria-label="Main navigation">
     <a href="#ridertable" class="view-link">Ryttere</a>
-    <a href="#addriders" class="view-link">Tilføj Rytter</a>
+    <a href="#addrider" class="view-link">Tilføj Rytter</a>
     <a href="#mytab" class="view-link">Tom tap</a>
 </nav>
-<div id="nav"></div>
 
+<!-- Main Content -->
+<!-- Her har vi en main med et id, som vi kalder i vores app -->
+<!-- I det her eksempel skal ID på vores href og ID på vores elementer under her være ens -->
+<!-- Da det er logikken i vores router -->
 <main id="app">
+
+    <!-- Each section corresponds to a view -->
     <div id="ridertable" class="view-content"></div>
 
-    <div id="addriders" class="view-content"></div>
+    <div id="addrider" class="view-content"></div>
 
     <div id="mytab" class="view-content"></div>
 
