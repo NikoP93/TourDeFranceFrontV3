@@ -1,4 +1,4 @@
-import {fetchAnyUrl, restDelete} from "./module.js";
+import {fetchAnyUrl, ObjectAsJson, restDelete} from "./module.js";
 
 console.log("Jeg er i ridertable")
 
@@ -57,9 +57,23 @@ async function deleteRider(rider){
     }
 }
 
+
+
+
+
 async function fetchRiders() {
     const riderTableDiv = document.getElementById("ridertable")
     tblRiders.innerHTML = ""
+
+    const headerRow = tblRiders.insertRow(0);
+    const headers = ["Name", "Age", "Time", "Sprint Points", "Mountain Points", "Team", "Actions"];
+
+    headers.forEach(headerText => {
+        const headerCell = document.createElement("th");
+        headerCell.innerText = headerText;
+        headerRow.appendChild(headerCell);
+    });
+
     riderTableDiv.appendChild(tblRiders)
     const riders = await fetchAnyUrl(urlRiders)
     console.log(riders);
