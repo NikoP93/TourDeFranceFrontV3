@@ -45,6 +45,18 @@ function createTable(rider) {
 
 }
 
+function sortRiders(riders){
+    return riders.sort((rid1,rid2) =>{
+        if(rid1.totalTime > rid2.totalTime){
+            return 1
+        } else if (rid2.totalTime > rid1.totalTime){
+            return -1
+        } else if(rid1.sprintPoints < rid2.sprintPoints){
+            return 1
+        } else {return -1}
+    })
+}
+
 async function deleteRider(rider){
     try{
         const url = urlRiders + "/" + rider.id
@@ -57,9 +69,7 @@ async function deleteRider(rider){
     }
 }
 
-
-
-
+let riders = []
 
 async function fetchRiders() {
     const riderTableDiv = document.getElementById("ridertable")
@@ -75,7 +85,8 @@ async function fetchRiders() {
     });
 
     riderTableDiv.appendChild(tblRiders)
-    const riders = await fetchAnyUrl(urlRiders)
+    riders = await fetchAnyUrl(urlRiders)
+    riders = sortRiders(riders)
     console.log(riders);
     riders.forEach(createTable)
 }
