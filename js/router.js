@@ -1,5 +1,6 @@
 import{initializeRiderTable} from "./ridertable.js";
 import {initializeAddRider} from "./addrider.js";
+import {initializeEditRider} from "./editrider.js";
 
 
 //Hashchange betyder at når noget efter # ændre sig i url, kalder den handleViewChange metoden
@@ -13,6 +14,7 @@ function initializeViewNavigation() {
 const viewInitializers = {
     "#ridertable": () => initializeRiderTable(),
     "#addrider" : () => initializeAddRider(),
+    "#editrider" : () => initializeEditRider(),
 
 
 

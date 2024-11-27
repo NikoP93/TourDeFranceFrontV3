@@ -42,6 +42,12 @@ function createTable(rider) {
     }
     row.appendChild(pbDelete)
 
+    const linkEdit = document.createElement("a")
+    linkEdit.setAttribute("href", "?id=" + rider.id + "#editrider")
+    linkEdit.setAttribute("class", "view-link")
+    linkEdit.innerHTML = "Redigere rytter"
+    row.appendChild(linkEdit)
+
 
 }
 
@@ -91,8 +97,8 @@ async function fetchRiders() {
     riders.forEach(createTable)
 }
 
-    export function initializeRiderTable() {
-        fetchRiders()
-    }
+export function initializeRiderTable() {
+    fetchRiders()
+}
 
 
