@@ -16,8 +16,6 @@ const viewInitializers = {
     "#addrider" : () => initializeAddRider(),
     "#editrider" : () => initializeEditRider(),
 
-
-
 }
 
 //Sætter ridertable som det defaultView, så hvis der ikke er nogle #, så sætter den ridertable som default
